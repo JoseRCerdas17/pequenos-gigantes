@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1A7FBF;
+  --color-primary-light: #4AA8E0;
+  --color-primary-dark: #0F5A8A;
+  --color-primary-muted: #E8F4FC;
+  --color-accent: #FFD43B;
+  --color-accent-dark: #E6BC00;
+  --color-mint: #4CAF8A;
+  --color-mint-light: #E8F5EE;
+  --color-surface: #F8FBFF;
+  --color-card: #FFFFFF;
+  --color-border: #E2EEF7;
+  --color-text: #1A2B3C;
+  --color-text-muted: #6B8299;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { background-color: #F8FBFF; color: #1A2B3C; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-bold px-6 py-3 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary-dark;
+  }
+  .btn-accent {
+    @apply font-bold px-6 py-3 rounded-xl cursor-pointer transition-all duration-300;
+    background-color: #FFD43B;
+    color: #1A2B3C;
+  }
+  .btn-accent:hover { background-color: #E6BC00; }
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-bold px-6 py-3 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary hover:text-white;
+  }
+  .card { @apply bg-white border border-border rounded-2xl shadow-sm; }
+  .section-padding { @apply px-4 py-16 md:px-8 lg:px-16 lg:py-24; }
+  .badge-alert { @apply bg-red-50 text-red-600 border border-red-200 text-xs font-bold px-2 py-0.5 rounded-full; }
+  .badge-success { @apply bg-green-50 text-green-700 border border-green-200 text-xs font-bold px-2 py-0.5 rounded-full; }
+  .badge-warning { @apply bg-yellow-50 text-yellow-700 border border-yellow-200 text-xs font-bold px-2 py-0.5 rounded-full; }
+  .badge-pending { @apply bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold px-2 py-0.5 rounded-full; }
+}
